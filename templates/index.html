@@ -22,24 +22,34 @@
     <hr>
 
     {% if items %}
-        <h1>Valor médio dos itens pesquisados: R$ {{ average_price }}</h1>
-        <ol style="--length: {{ items|length }}" role="list">
-            {% set y = 0 %}
+    <h1>Valor médio dos itens pesquisados: R$ {{ average_price }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th> <!-- Adicionando a coluna de numeração -->
+                <th>Nome</th>
+                <th>Avaliação</th>
+                <th>Número de Avaliações</th>
+                <th>Valor</th>
+                <th>Vendedor</th>
+                <th>Parcela</th>
+            </tr>
+        </thead>
+        <tbody>
             {% for item in items %}
-            {% set y = y + 1 %}
-            <li style="--i: {{ y }}">
-                <h3>{{ item['Nome'] }}</h3><br>
-                <strong>Avaliação:</strong> {{ item['Avaliação'] }}<br>
-                <strong>Número de Avaliações:</strong> {{ item['Número de Avaliações'] }}<br>
-                <strong>Valor:</strong> R$ {{ item['Valor'] }}<br>
-                <strong>Vendedor:</strong> {{ item['Vendedor'] }}<br>
-                <strong>Parcela:</strong> {{ item['Parcela'] }}<br>
-            </li>
+                <tr>
+                    <td>{{ loop.index }}</td> <!-- Usando loop.index para exibir o índice -->
+                    <td>{{ item['Nome'] }}</td>
+                    <td>{{ item['Avaliação'] }}</td>
+                    <td>{{ item['Número de Avaliações'] }}</td>
+                    <td>R$ {{ item['Valor'] }}</td>
+                    <td>{{ item['Vendedor'] }}</td>
+                    <td>{{ item['Parcela'] }}</td>
+                </tr>
             {% endfor %}
-        </ol>
+        </tbody>
+    </table>
     {% endif %}
 
-
-    
 </body>
 </html>
