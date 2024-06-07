@@ -18,6 +18,8 @@
         <button type="submit">Buscar</button>
     </form> 
 
+    <!-- Mensagem de aguarde durante a pesquisa -->
+    <p id="loading-message" style="display: none;">Pesquisando, por favor, aguarde...</p>
 
     <hr>
 
@@ -51,5 +53,11 @@
     </table>
     {% endif %}
 
+    <script>
+        // Exibe a mensagem de "Aguarde" ao enviar o formulário
+        document.querySelector('form').addEventListener('submit', function(event) {
+            document.getElementById('loading-message').style.display = 'block';
+        });
+    </script>
 </body>
 </html>

@@ -53,6 +53,14 @@ Este projeto consiste em uma aplicação web desenvolvida em Python para compara
 
 5. Os resultados da busca serão exibidos em uma tabela na mesma página.
 
+## ⚠️ Observações sobre o Scraping do Mercado Livre
+
+Devido a mudanças na interface do Mercado Livre, a captura de informações como o nome do vendedor pode exigir uma abordagem diferente. Anteriormente, o nome do vendedor estava disponível diretamente no card do produto, mas agora pode ser necessário navegar até a página do produto para recuperar essa informação.
+
+Isso pode resultar em uma leve demora na coleta de dados, pois cada produto pode exigir uma navegação adicional para obter o nome do vendedor. Portanto, é importante estar ciente de que o tempo de espera pode ser um pouco mais longo do que o esperado, especialmente ao lidar com uma grande quantidade de itens.
+
+Essa abordagem garante a precisão das informações coletadas, mesmo diante de mudanças na interface do Mercado Livre, garantindo uma experiência confiável para os usuários da aplicação.
+
 ## Observações
 
 - Os dados coletados serão armazenados no arquivo `mercadolivre.db` no diretório `C:\mercadolivre` da máquina do usuário.
